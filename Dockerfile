@@ -2,6 +2,7 @@ FROM land007/golang:latest
 
 MAINTAINER Yiqiu Jia <yiqiujia@hotmail.com>
 
+RUN apt-get update && apt-get upgrade -y && apt-get clean
 RUN apt-get install -y build-essential git
 
 RUN cd /tmp && wget https://github.com/google/protobuf/releases/download/v3.6.1/protobuf-all-3.6.1.tar.gz && tar -zxvf protobuf-all-3.6.1.tar.gz && rm -f protobuf-all-3.6.1.tar.gz
