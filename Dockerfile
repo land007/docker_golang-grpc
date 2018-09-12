@@ -11,12 +11,6 @@ RUN echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib' >> /etc/profil
 
 RUN go get -u google.golang.org/grpc
 RUN go get -u github.com/golang/protobuf/protoc-gen-go
-#图片exif
-RUN go get -u github.com/disintegration/imaging
-RUN go get -u github.com/rwcarlsen/goexif/exif
-RUN mkdir $GOPATH/src/exiffix
-COPY gopath/src/exiffix/decode.go $GOPATH/src/exiffix
-RUN cd $GOPATH/src/exiffix && go build && go install
 
 
 #docker stop golang-grpc ; docker rm golang-grpc ; docker run -it --privileged --name golang-grpc land007/golang-grpc:latest
