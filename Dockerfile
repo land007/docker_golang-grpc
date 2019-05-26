@@ -10,5 +10,8 @@ MAINTAINER Yiqiu Jia <yiqiujia@hotmail.com>
 RUN go get -u google.golang.org/grpc
 RUN go get -u github.com/golang/protobuf/protoc-gen-go
 
+RUN echo $(date "+%Y-%m-%d_%H:%M:%S") > /.image_time
+RUN echo "land007/golang-grpc" > /.image_name
+
 
 #docker stop golang-grpc ; docker rm golang-grpc ; docker run -it --privileged --name golang-grpc land007/golang-grpc:latest
