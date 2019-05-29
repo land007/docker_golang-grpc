@@ -10,7 +10,9 @@ RUN echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:/usr/local/lib6
 RUN go get -u google.golang.org/grpc
 RUN go get -u github.com/golang/protobuf/protoc-gen-go
 
+RUN echo $(date "+%Y-%m-%d_%H:%M:%S") >> /.image_times
 RUN echo $(date "+%Y-%m-%d_%H:%M:%S") > /.image_time
+RUN echo "land007/golang-grpc" >> /.image_names
 RUN echo "land007/golang-grpc" > /.image_name
 
 
